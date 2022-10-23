@@ -19,7 +19,7 @@
 - база данных транзакций пользователей для бухгатерии
 - база данных несостоявшихся покупок
 
-![Screenshot](scheme.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/scheme.png)
 
 ### Функционал микросервиса
 - создать нового пользователя
