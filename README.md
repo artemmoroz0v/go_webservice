@@ -81,4 +81,5 @@
     "statusID":0
 }***
     - отражение в базе данных:
+
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_2.png)
