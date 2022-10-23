@@ -1,0 +1,5 @@
+"accounting_id","accounting_name","spent_founds","comment"
+2,"Petr Petrov",0,""
+1,"Ivan Ivanov",0," Refilled: 1000. WriteOff: 5000."
+3,"Yan Yanov",0," Received: 2000 from Artem Morozov."
+0,"Artem Morozov",6000," Transfer: 2000 to Yan Yanov. Bought Playstation 3 for 4000."

@@ -1,0 +1,5 @@
+"user_id","user_name","user_balance","status_id"
+1,"Ivan Ivanov",46000,0
+0,"Artem Morozov",24000,0
+2,"Petr Petrov",10000,0
+3,"Yan Yanov",12000,1

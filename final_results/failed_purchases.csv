@@ -1,0 +1,3 @@
+"item_id","client_id","price","purchase_status","can_be_unlocked"
+4,2,16000,"rejected",True
+2,3,65000,"rejected",False

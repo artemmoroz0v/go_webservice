@@ -1,0 +1,7 @@
+"product_id","product_name","product_cost","product_available"
+1,"Playstation 4",25000,True
+2,"Playstation 5",65000,True
+3,"XBOX 360",6000,True
+4,"XBOX ONE",16000,True
+5,"XBOX SERIES S",30000,True
+0,"Playstation 3",4000,False
