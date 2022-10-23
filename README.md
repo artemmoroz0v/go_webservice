@@ -368,6 +368,7 @@
 
 
 10. И, наконец, последнее: давайте посмотрим транзакции по отдельному пользователю и по всем пользователям.
+По отдельному пользователю:
     - тип запроса: ***GET***
     - URL запроса: ***"http://localhost:8080/accounting/:id"***
     - пример запроса: ***http://localhost:8080/accounting/0***
@@ -378,11 +379,11 @@
     "comment": " Transfer: 2000 to Yan Yanov. Bought Playstation 3 for 4000."
 }***
     
-    
-   - тип запроса: ***GET***
-   - URL запроса: ***"http://localhost:8080/accounting"***
-   - пример запроса: ***http://localhost:8080/accounting***
-   - ответ на запрос: ***[
+По всем пользователям:
+    - тип запроса: ***GET***
+    - URL запроса: ***"http://localhost:8080/accounting"***
+    - пример запроса: ***http://localhost:8080/accounting***
+    - ответ на запрос: ***[
     {
         "ID": 2,
         "Name": "Petr Petrov",
