@@ -84,6 +84,7 @@
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_2.png)
 
+
 2. Получить список пользователей:
     - тип запроса: ***GET**
     - URL запроса: ***http://localhost:8080/users***
@@ -117,6 +118,8 @@
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_3.png)
 
+
+
 3. Получить баланс пользователя.
     - тип запроса: ***GET**
     - URL запроса: ***http://localhost:8080/users/:id***
@@ -127,6 +130,8 @@
     "userBalance":30000.0,
     "statusID":0
 }*** 
+
+
 
 4. Добавить средства пользователю.
     - тип запроса: ***PUT***
