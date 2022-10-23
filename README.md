@@ -222,3 +222,25 @@
     - отражение в базе данных:
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_7.png)
+
+Вот, как выглядят эти запросы локально из кода:
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_01.png)
+
+8. Получить список продаваемых товаров
+    - тип запроса: ***GET***
+    - URL запроса: ***"http://localhost:8080/items/add"***
+    - пример запроса: ***{
+    "productID": 0,
+    "productName": "Playstation 3",
+    "productCost": 4000,
+    "productAvailable": true
+}***
+    - ответ на запрос: ***{
+    "productID": 0,
+    "productName": "Playstation 3",
+    "productCost": 4000,
+    "productAvailable": true
+}***
+    - отражение в базе данных:
+
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_7.png)
