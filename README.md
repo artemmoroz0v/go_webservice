@@ -83,3 +83,36 @@
     - отражение в базе данных:
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_2.png)
+
+2. Получить список пользователей:
+    - тип запроса: ***GET**
+    - URL запроса: ***http://localhost:8080/users***
+    - ответ на запрос: ***[
+    {
+        "userID": 0,
+        "userName": "Artem Morozov",
+        "userBalance": 30000,
+        "statusID": 0
+    },
+    {
+        "userID": 1,
+        "userName": "Ivan Ivanov",
+        "userBalance": 50000,
+        "statusID": 0
+    },
+    {
+        "userID": 2,
+        "userName": "Petr Petrov",
+        "userBalance": 10000,
+        "statusID": 0
+    },
+    {
+        "userID": 3,
+        "userName": "Yan Yanov",
+        "userBalance": 10000,
+        "statusID": 0
+    }
+]***
+    - отражение в базе данных:
+
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_3.png)
