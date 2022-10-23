@@ -299,6 +299,7 @@
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_11.png)
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_12.png)
 
+
 2.  - тип запроса: ***PUT***
     - URL запроса: ***"http://localhost:8080/items/buy"***
     - пример запроса: ***{
