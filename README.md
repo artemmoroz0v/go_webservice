@@ -66,8 +66,7 @@
 - перевести средства от пользователя к пользователю
 - добавить товар для продажи
 - получить список продаваемых товаров
-- купить товар пользователю
-- в случае блокировки баланса, разблокировать баланс пользователю (***дополнительное задание***)
+- купить товар пользователю, а в случае резервирования разрезервировать ему баланс (***дополнительное задание***)
 - просмотреть бухгалтерский отчет как по всем сразу, так и по отдельно взятому пользователю - их историю транзакций (***доп. задание 2***)
 
 
@@ -271,7 +270,7 @@
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_8.png)
 
-9. Купить товар пользователю (изменение всех баз данных - пользователей, магазина (доступность товара меняется на false в случае покупки), транзакций (в графу соответствующего добавляются потраченные средства и комментарий, на что он их потратил), неудачных покупок (в случае отмены заказа будем видеть, можно ли разрезервировать средства или нет))
+9. Купить товар пользователю и при необходимости попытаться разрезервировать средства (изменение всех баз данных - пользователей, магазина (доступность товара меняется на false в случае покупки), транзакций (в графу соответствующего добавляются потраченные средства и комментарий, на что он их потратил), неудачных покупок (в случае отмены заказа будем видеть, можно ли разрезервировать средства или нет))
 
 Рассмотрим три сценария: 
    - когда пользователь покупает товар успешно, 
@@ -300,4 +299,47 @@
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_11.png)
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_12.png)
 
-База данных ***failed_purchases*** пуста, так как нет неподтвержденных покупок.
+2.  - тип запроса: ***GET***
+    - URL запроса: ***"http://localhost:8080/items/buy"***
+    - пример запроса: ***{
+    "itemID": 4,
+    "userID": 2,
+    "itemSum": 16000
+}***
+    - ответ на запрос: ***{
+    "message": "purchase has not been done. user's balance has been freezed!"
+}{
+    "userID": 2,
+    "userName": "Petr Petrov",
+    "userBalance": 10000,
+    "statusID": 1
+}***
+   - отражение во ***всех*** базах данных:
+
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_13.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_14.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_15.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_16.png)
+
+***Самое интересное*** в базе данных ***failed_purchases*** в поле ***can_be_unlocked*** стоит значение true, так как стоимость заказа не превышала 50 тысяч. Именно такой сценарий я выбрал для реализации данного тестового задания. Если бы пользователь хотел купить заказ на сумму свыше 50 тысяч рублей, и ему бы отказало из-за недостатка средств или отсутствия товара в магазине, то разблокировать бы средства он не смог.
+
+В данном случае средства разблокировать можно. Давайте же это сделаем при помощи специального запроса:
+
+- тип запроса: ***PUT***
+    - URL запроса: ***"http://localhost:8080/items/unlock"***
+    - пример запроса: ***{
+    "userID": 2,
+    "userName": "Petr Petrov",
+    "userBalance": 10000,
+    "statusID": 1
+}***
+    - ответ на запрос: ***{
+    "message": "balance has been unlocked!"
+}{
+    "userID": 2,
+    "userName": "Petr Petrov",
+    "userBalance": 10000,
+    "statusID": 0
+}***
+   - отражение в базе данных пользователя:
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_17.png)
