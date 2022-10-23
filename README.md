@@ -365,3 +365,47 @@
 ***{
     "message": "product cost in user's purchase was over 50 000, balance can not be unlocked"
 }***
+
+
+10. И, наконец, последнее: давайте посмотрим транзакции по отдельному пользователю и по всем пользователям.
+    - тип запроса: ***GET***
+    - URL запроса: ***"http://localhost:8080/accounting/:id"***
+    - пример запроса: ***http://localhost:8080/accounting/0***
+    - ответ на запрос: ***{
+    "ID": 0,
+    "Name": "Artem Morozov",
+    "spentFunds": 6000,
+    "comment": " Transfer: 2000 to Yan Yanov. Bought Playstation 3 for 4000."
+}***
+    
+    
+   - тип запроса: ***GET***
+   - URL запроса: ***"http://localhost:8080/accounting"***
+   - пример запроса: ***http://localhost:8080/accounting***
+   - ответ на запрос: ***[
+    {
+        "ID": 2,
+        "Name": "Petr Petrov",
+        "spentFunds": 0,
+        "comment": ""
+    },
+    {
+        "ID": 1,
+        "Name": "Ivan Ivanov",
+        "spentFunds": 0,
+        "comment": " Refilled: 1000. WriteOff: 5000."
+    },
+    {
+        "ID": 3,
+        "Name": "Yan Yanov",
+        "spentFunds": 0,
+        "comment": " Received: 2000 from Artem Morozov."
+    },
+    {
+        "ID": 0,
+        "Name": "Artem Morozov",
+        "spentFunds": 6000,
+        "comment": " Transfer: 2000 to Yan Yanov. Bought Playstation 3 for 4000."
+    }
+]***
+    
