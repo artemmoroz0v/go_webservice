@@ -21,7 +21,7 @@
 - база данных несостоявшихся покупок
 
 
-![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/scheme.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_1.png)
 
 ### Функционал микросервиса
 - создать нового пользователя
