@@ -204,7 +204,7 @@
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_0.png)
 
-7. Добавить товар для продажи
+7. Добавить товар для продажи (изменение базы данных товаров)
     - тип запроса: ***POST***
     - URL запроса: ***"http://localhost:8080/items/add"***
     - пример запроса: ***{
@@ -226,7 +226,7 @@
 Вот, как выглядят эти запросы локально из кода:
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_01.png)
 
-8. Получить список продаваемых товаров
+8. Получить список продаваемых товаров (выборка из базы данных товаров)
     - тип запроса: ***GET***
     - URL запроса: ***"http://localhost:8080/items"***
     - ответ на запрос: ***[
@@ -270,3 +270,29 @@
     - отражение в базе данных:
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_8.png)
+
+9. Купить товар пользователю (изменение всех баз данных - пользователей, магазина (доступность товара меняется на false в случае покупки), транзакций (в графу соответствующего добавляются потраченные средства и комментарий, на что он их потратил), неудачных покупок (в случае отмены заказа будем видеть, можно ли разрезервировать средства или нет)
+
+Рассмотрим три сценария: 1) когда пользователь покупает товар успешно, 2) когда заказ отменен, но пользователь может разрезервировать средства, 3) когда заказ отменен, но пользователь не может разрезервировать средства
+
+1)  - тип запроса: ***GET***
+    - URL запроса: ***"http://localhost:8080/items/buy"***
+    - пример запроса: ***{
+    "itemID": 0,
+    "userID": 0,
+    "itemSum": 4000
+}***
+    - ответ на запрос: ***{
+    "message": "user with id 0 has bought item with id 0 for next price: 4000"
+}{
+    "userID": 0,
+    "userName": "Artem Morozov",
+    "userBalance": 24000,
+    "statusID": 0
+}***
+   - отражение во ***всех*** базах данных:
+
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_9.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_10.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_11.png)
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_12.png) - база данных пуста, так как нет неподтвержденных покупок.
