@@ -116,3 +116,33 @@
     - отражение в базе данных:
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_3.png)
+
+3. Получить баланс пользователя.
+    - тип запроса: ***GET**
+    - URL запроса: ***http://localhost:8080/users/:id***
+    - пример запроса: ***http://localhost:8080/users/0***
+    - ответ на запрос: ***{
+    "userID":0,
+    "userName":"Artem Morozov",
+    "userBalance":30000.0,
+    "statusID":0
+}*** 
+
+4. Добавить средства пользователю.
+    - тип запроса: ***PUT***
+    - URL запроса: ***http://localhost:8080/users/***
+    - пример запроса: ***{
+    "userID": 1,
+    "type": 0,
+    "value": 1000
+}***
+    - ответ на запрос: ***{
+    "userID": 1,
+    "userName": "Ivan Ivanov",
+    "userBalance": 51000,
+    "statusID": 0
+}***
+    - отражение в базе данных:
+
+
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_4.png)
