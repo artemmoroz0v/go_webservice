@@ -23,6 +23,8 @@
 
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_1.png)
 
+Далее будет подробно раскрыт смысл каждой из созданных мною баз данных.
+
 ### Функционал микросервиса
 - создать нового пользователя
 - получить список пользователей
