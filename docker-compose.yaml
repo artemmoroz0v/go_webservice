@@ -1,0 +1,19 @@
+version: "3"
+services:
+  postgres:
+    image: postgres
+    environment:
+      POSTGRES_DB: "Avito"
+      POSTGRES_USER: "postgres"
+      POSTGRES_PASSWORD: "12345"
+    ports:
+      - "5433:5432"
+  goapplication:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    depends_on: 
+      - postgres
+    ports:
+      - '8080:8080'
+    
