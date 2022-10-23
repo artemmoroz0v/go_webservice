@@ -74,3 +74,11 @@
     "userBalance":30000.0,
     "statusID":0
 }***
+    - ответ на запрос: ***{
+    "userID":0,
+    "userName":"Artem Morozov",
+    "userBalance":30000.0,
+    "statusID":0
+}***
+    - отражение в базе данных:
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_2.png)
