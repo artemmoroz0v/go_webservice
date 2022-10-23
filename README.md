@@ -278,8 +278,7 @@
    - когда заказ отменен, но пользователь может разрезервировать средства
    - когда заказ отменен, но пользователь не может разрезервировать средства
 
-    - ***пользователь покупает товар успешно***
-    - тип запроса: ***GET***
+1.  - тип запроса: ***GET***
     - URL запроса: ***"http://localhost:8080/items/buy"***
     - пример запроса: ***{
     "itemID": 0,
@@ -299,4 +298,6 @@
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_9.png)
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_10.png)
 ![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_11.png)
-![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_12.png) - база данных пуста, так как нет неподтвержденных покупок.
+![Screenshot](https://github.com/artemmoroz0v/go_webservice/blob/main/screenshots/Screenshot_12.png)
+
+База данных ***failed_purchases*** пуста, так как нет неподтвержденных покупок.
