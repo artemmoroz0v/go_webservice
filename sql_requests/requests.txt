@@ -2,27 +2,27 @@ CREATE TABLE users(
     	user_id INTEGER PRIMARY KEY,
     	user_name VARCHAR (100) NOT NULL,
     	user_balance FLOAT NOT NULL,
-	    status_id INTEGER NOT NULL
+	status_id INTEGER NOT NULL
 );
 CREATE TABLE stock(
     	product_id INTEGER PRIMARY KEY,
-	    product_name VARCHAR (100) NOT NULL,
+	product_name VARCHAR (100) NOT NULL,
     	product_cost FLOAT NOT NULL,
-	    product_available BOOLEAN NOT NULL
+	product_available BOOLEAN NOT NULL
 );
 CREATE TABLE failed_purchases(
     	item_id INTEGER PRIMARY KEY,
-	    client_id INTEGER NOT NULL,
+	client_id INTEGER NOT NULL,
     	price FLOAT NOT NULL,
-	    purchase_status VARCHAR (10) NOT NULL,
-	    can_be_unlocked BOOLEAN NOT NULL,
-	    FOREIGN KEY (item_id) REFERENCES stock(product_id),
-	    FOREIGN KEY (client_id) REFERENCES users(user_id)
+	purchase_status VARCHAR (10) NOT NULL,
+	can_be_unlocked BOOLEAN NOT NULL,
+	FOREIGN KEY (item_id) REFERENCES stock(product_id),
+	FOREIGN KEY (client_id) REFERENCES users(user_id)
 );
 CREATE TABLE accounting (
     	accounting_id INTEGER PRIMARY KEY,
-	    accounting_name VARCHAR (100) NOT NULL,
-	    spent_founds FLOAT NOT NULL,
-	    comment VARCHAR (1000) NOT NULL,
-	    FOREIGN KEY (accounting_id) REFERENCES users(user_id)
+	accounting_name VARCHAR (100) NOT NULL,
+	spent_founds FLOAT NOT NULL,
+	comment VARCHAR (1000) NOT NULL,
+	FOREIGN KEY (accounting_id) REFERENCES users(user_id)
 )
