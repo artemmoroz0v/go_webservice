@@ -409,4 +409,3 @@
         "comment": " Transfer: 2000 to Yan Yanov. Bought Playstation 3 for 4000."
     }
 ]***
-    
